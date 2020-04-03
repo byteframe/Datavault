@@ -1,0 +1,956 @@
+root@icarus:/var/log# cat syslog* | grep ata
+Jul 18 16:15:13 icarus kernel: ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+Jul 18 16:15:13 icarus kernel: ata1.00: BMDMA stat 0x26
+Jul 18 16:15:13 icarus kernel: ata1.00: failed command: READ DMA EXT
+Jul 18 16:15:13 icarus kernel: ata1.00: cmd 25/00:20:f5:15:25/00:00:d4:00:00/e0 tag 0 dma 16384 in
+Jul 18 16:15:13 icarus kernel: ata1.00: status: { DRDY ERR }
+Jul 18 16:15:13 icarus kernel: ata1.00: error: { ICRC ABRT }
+Jul 18 18:19:42 icarus kernel: ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+Jul 18 18:19:42 icarus kernel: ata1.00: BMDMA stat 0x26
+Jul 18 18:19:42 icarus kernel: ata1.00: failed command: READ DMA EXT
+Jul 18 18:19:42 icarus kernel: ata1.00: cmd 25/00:00:0d:b4:3a/00:02:d5:00:00/e0 tag 0 dma 262144 in
+Jul 18 18:19:42 icarus kernel: ata1.00: status: { DRDY ERR }
+Jul 18 18:19:42 icarus kernel: ata1.00: error: { ICRC ABRT }
+Jul 18 19:22:35 icarus kernel: ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+Jul 18 19:22:35 icarus kernel: ata1.00: BMDMA stat 0x26
+Jul 18 19:22:35 icarus kernel: ata1.00: failed command: READ DMA EXT
+Jul 18 19:22:35 icarus kernel: ata1.00: cmd 25/00:00:1d:98:bf/00:02:d4:00:00/e0 tag 0 dma 262144 in
+Jul 18 19:22:35 icarus kernel: ata1.00: status: { DRDY ERR }
+Jul 18 19:22:35 icarus kernel: ata1.00: error: { ICRC ABRT }
+Jul 18 19:41:21 icarus kernel: ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+Jul 18 19:41:21 icarus kernel: ata1.00: BMDMA stat 0x26
+Jul 18 19:41:21 icarus kernel: ata1.00: failed command: READ DMA EXT
+Jul 18 19:41:21 icarus kernel: ata1.00: cmd 25/00:00:fd:f4:a8/00:01:d2:00:00/e0 tag 0 dma 131072 in
+Jul 18 19:41:21 icarus kernel: ata1.00: status: { DRDY ERR }
+Jul 18 19:41:21 icarus kernel: ata1.00: error: { ICRC ABRT }
+Jul 18 20:21:58 icarus kernel: ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+Jul 18 20:21:58 icarus kernel: ata1.00: BMDMA stat 0x26
+Jul 18 20:21:58 icarus kernel: ata1.00: failed command: READ DMA EXT
+Jul 18 20:21:58 icarus kernel: ata1.00: cmd 25/00:00:cd:57:67/00:02:d5:00:00/e0 tag 0 dma 262144 in
+Jul 18 20:21:58 icarus kernel: ata1.00: status: { DRDY ERR }
+Jul 18 20:21:58 icarus kernel: ata1.00: error: { ICRC ABRT }
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:dd:2f:30/00:01:4d:00:00/e0 tag 0 dma 131072 in
+         res 51/84:30:ad:30:30/84:00:4d:00:00/00 Emask 0x30 (host bus error)
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1: soft resetting link
+ata1.00: configured for UDMA/133
+ata1: EH complete
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:dd:3c:10/00:01:b4:00:00/e0 tag 0 dma 131072 in
+         res 51/84:d0:0d:3d:10/84:00:b4:00:00/00 Emask 0x30 (host bus error)
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1: soft resetting link
+ata1.00: configured for UDMA/133
+ata1: EH complete
+--------------------------------------------------------------------------------
+smartctl 5.39.1 2010-01-28 r3054 [i486-slackware-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Hitachi Deskstar 7K2000
+Device Model:     Hitachi HDS722020ALA330
+Serial Number:    JK1130YAHDHPAT
+Firmware Version: JKAOA28A
+User Capacity:    2,000,398,934,016 bytes
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 4
+Local Time is:    Sun Jul 25 17:31:49 2010 EDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x84)	Offline data collection activity
+					was suspended by an interrupting command from host.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 (22624) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 255) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   099   099   016    Pre-fail  Always       -       65538
+  2 Throughput_Performance  0x0005   131   131   054    Pre-fail  Offline      -       107
+  3 Spin_Up_Time            0x0007   113   113   024    Pre-fail  Always       -       661 (Average 622)
+  4 Start_Stop_Count        0x0012   100   100   000    Old_age   Always       -       40
+  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   114   114   020    Pre-fail  Offline      -       38
+  9 Power_On_Hours          0x0012   100   100   000    Old_age   Always       -       2763
+ 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       40
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       55
+193 Load_Cycle_Count        0x0012   100   100   000    Old_age   Always       -       55
+194 Temperature_Celsius     0x0002   120   120   000    Old_age   Always       -       50 (Lifetime Min/Max 20/57)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       7
+
+SMART Error Log Version: 1
+ATA Error Count: 7 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 7 occurred at disk power-on lifetime: 2731 hours (113 days + 19 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 d0 0d 3d 10 00  Error: ICRC, ABRT 208 sectors at LBA = 0x00103d0d = 1064205
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 dd 3c 10 e4 0a  48d+07:25:10.130  READ DMA EXT
+  25 00 00 dd 3b 10 e4 0a  48d+07:25:10.122  READ DMA EXT
+  25 00 00 dd 3a 10 e4 0a  48d+07:25:10.114  READ DMA EXT
+  25 00 00 dd 39 10 e4 0a  48d+07:25:10.098  READ DMA EXT
+  25 00 00 dd 38 10 e4 0a  48d+07:25:10.090  READ DMA EXT
+
+Error 6 occurred at disk power-on lifetime: 2730 hours (113 days + 18 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 30 ad 30 30 00  Error: ICRC, ABRT 48 sectors at LBA = 0x003030ad = 3158189
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 dd 2f 30 ed 0a  48d+06:26:17.862  READ DMA EXT
+  25 00 80 5d 2f 30 ed 0a  48d+06:26:17.857  READ DMA EXT
+  25 00 40 1d 2f 30 e0 0a  48d+06:26:17.802  READ DMA EXT
+  25 00 00 dd 3f 2c ed 0a  48d+06:26:17.796  READ DMA EXT
+  25 00 00 dd 3e 2c ed 0a  48d+06:26:17.790  READ DMA EXT
+
+Error 5 occurred at disk power-on lifetime: 2723 hours (113 days + 11 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 80 4d 59 67 00  Error: ICRC, ABRT 128 sectors at LBA = 0x0067594d = 6773069
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 cd 57 67 e5 0a  46d+07:24:52.745  READ DMA EXT
+  25 00 00 cd 55 67 e5 0a  46d+07:24:52.726  READ DMA EXT
+  25 00 00 cd 53 67 e5 0a  46d+07:24:52.699  READ DMA EXT
+  25 00 00 cd 51 67 e5 0a  46d+07:24:52.679  READ DMA EXT
+  25 00 00 cd 4f 67 e5 0a  46d+07:24:52.654  READ DMA EXT
+
+Error 4 occurred at disk power-on lifetime: 2722 hours (113 days + 10 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 00 fd f5 a8 00  Error: ICRC, ABRT at LBA = 0x00a8f5fd = 11073021
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 fd f4 a8 e2 0a  46d+03:16:58.251  READ DMA EXT
+  25 00 00 fd f3 a8 e0 0a  46d+03:16:54.983  READ DMA EXT
+  25 00 00 1d b7 a6 e2 0a  46d+03:16:52.972  READ DMA EXT
+  25 00 00 1d b6 a6 e2 0a  46d+03:16:50.654  READ DMA EXT
+  35 00 08 5d 50 4e e6 0a  46d+03:16:48.941  WRITE DMA EXT
+
+Error 3 occurred at disk power-on lifetime: 2722 hours (113 days + 10 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 90 8d 99 bf 00  Error: ICRC, ABRT 144 sectors at LBA = 0x00bf998d = 12556685
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 1d 98 bf e4 0a  46d+01:22:23.286  READ DMA EXT
+  25 00 00 1d 96 bf e4 0a  46d+01:22:23.259  READ DMA EXT
+  25 00 60 bd 94 bf e4 0a  46d+01:22:23.246  READ DMA EXT
+  25 00 a8 15 94 bf e4 0a  46d+01:22:23.239  READ DMA EXT
+  25 00 00 15 92 bf e4 0a  46d+01:22:23.220  READ DMA EXT
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Interrupted (host reset)      30%      2730         -
+# 2  Short offline       Completed without error       00%      2726         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+--------------------------------------------------------------------------------
+AFTER EXTENDED SELF TEST:
+smartctl 5.39.1 2010-01-28 r3054 [i486-slackware-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Hitachi Deskstar 7K2000
+Device Model:     Hitachi HDS722020ALA330
+Serial Number:    JK1130YAHDHPAT
+Firmware Version: JKAOA28A
+User Capacity:    2,000,398,934,016 bytes
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 4
+Local Time is:    Mon Jul 26 03:02:41 2010 EDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x85)	Offline data collection activity
+					was aborted by an interrupting command from host.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 (22624) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 255) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   016    Pre-fail  Always       -       0
+  2 Throughput_Performance  0x0005   131   131   054    Pre-fail  Offline      -       107
+  3 Spin_Up_Time            0x0007   113   113   024    Pre-fail  Always       -       661 (Average 622)
+  4 Start_Stop_Count        0x0012   100   100   000    Old_age   Always       -       40
+  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   114   114   020    Pre-fail  Offline      -       38
+  9 Power_On_Hours          0x0012   100   100   000    Old_age   Always       -       2772
+ 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       40
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       55
+193 Load_Cycle_Count        0x0012   100   100   000    Old_age   Always       -       55
+194 Temperature_Celsius     0x0002   136   136   000    Old_age   Always       -       44 (Lifetime Min/Max 20/57)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       7
+
+SMART Error Log Version: 1
+ATA Error Count: 7 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 7 occurred at disk power-on lifetime: 2731 hours (113 days + 19 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 d0 0d 3d 10 00  Error: ICRC, ABRT 208 sectors at LBA = 0x00103d0d = 1064205
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 dd 3c 10 e4 0a  48d+07:25:10.130  READ DMA EXT
+  25 00 00 dd 3b 10 e4 0a  48d+07:25:10.122  READ DMA EXT
+  25 00 00 dd 3a 10 e4 0a  48d+07:25:10.114  READ DMA EXT
+  25 00 00 dd 39 10 e4 0a  48d+07:25:10.098  READ DMA EXT
+  25 00 00 dd 38 10 e4 0a  48d+07:25:10.090  READ DMA EXT
+
+Error 6 occurred at disk power-on lifetime: 2730 hours (113 days + 18 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 30 ad 30 30 00  Error: ICRC, ABRT 48 sectors at LBA = 0x003030ad = 3158189
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 dd 2f 30 ed 0a  48d+06:26:17.862  READ DMA EXT
+  25 00 80 5d 2f 30 ed 0a  48d+06:26:17.857  READ DMA EXT
+  25 00 40 1d 2f 30 e0 0a  48d+06:26:17.802  READ DMA EXT
+  25 00 00 dd 3f 2c ed 0a  48d+06:26:17.796  READ DMA EXT
+  25 00 00 dd 3e 2c ed 0a  48d+06:26:17.790  READ DMA EXT
+
+Error 5 occurred at disk power-on lifetime: 2723 hours (113 days + 11 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 80 4d 59 67 00  Error: ICRC, ABRT 128 sectors at LBA = 0x0067594d = 6773069
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 cd 57 67 e5 0a  46d+07:24:52.745  READ DMA EXT
+  25 00 00 cd 55 67 e5 0a  46d+07:24:52.726  READ DMA EXT
+  25 00 00 cd 53 67 e5 0a  46d+07:24:52.699  READ DMA EXT
+  25 00 00 cd 51 67 e5 0a  46d+07:24:52.679  READ DMA EXT
+  25 00 00 cd 4f 67 e5 0a  46d+07:24:52.654  READ DMA EXT
+
+Error 4 occurred at disk power-on lifetime: 2722 hours (113 days + 10 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 00 fd f5 a8 00  Error: ICRC, ABRT at LBA = 0x00a8f5fd = 11073021
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 fd f4 a8 e2 0a  46d+03:16:58.251  READ DMA EXT
+  25 00 00 fd f3 a8 e0 0a  46d+03:16:54.983  READ DMA EXT
+  25 00 00 1d b7 a6 e2 0a  46d+03:16:52.972  READ DMA EXT
+  25 00 00 1d b6 a6 e2 0a  46d+03:16:50.654  READ DMA EXT
+  35 00 08 5d 50 4e e6 0a  46d+03:16:48.941  WRITE DMA EXT
+
+Error 3 occurred at disk power-on lifetime: 2722 hours (113 days + 10 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 90 8d 99 bf 00  Error: ICRC, ABRT 144 sectors at LBA = 0x00bf998d = 12556685
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 1d 98 bf e4 0a  46d+01:22:23.286  READ DMA EXT
+  25 00 00 1d 96 bf e4 0a  46d+01:22:23.259  READ DMA EXT
+  25 00 60 bd 94 bf e4 0a  46d+01:22:23.246  READ DMA EXT
+  25 00 a8 15 94 bf e4 0a  46d+01:22:23.239  READ DMA EXT
+  25 00 00 15 92 bf e4 0a  46d+01:22:23.220  READ DMA EXT
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%      2770         -
+# 2  Extended offline    Interrupted (host reset)      30%      2730         -
+# 3  Short offline       Completed without error       00%      2726         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+
+Aug 17 14:01:41 icarus smartd[1416]: Device: /dev/sda [SAT], SMART Usage Attribute: 199 UDMA_CRC_Error_Count changed from 200 to 199 
+
+ata1.00: ATA-8: Hitachi HDS722020ALA330, JKAOA28A, max UDMA/133
+ata1.00: 3907029168 sectors, multi 16: LBA48 NCQ (depth 0/32)
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:20:85:9d:ae/00:00:d3:00:00/e0 tag 0 dma 16384 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:0d:45:83/00:01:61:00:00/e0 tag 0 dma 131072 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:45:8b:84/00:02:61:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:48:25:77:7d/00:00:61:00:00/e0 tag 0 dma 36864 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:08:7d:3c:7f/00:00:61:00:00/e0 tag 0 dma 4096 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:08:25:6e:7f/00:00:61:00:00/e0 tag 0 dma 4096 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:30:c5:8d:80/00:00:61:00:00/e0 tag 0 dma 24576 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/133
+ata1.00: limiting speed to UDMA/100:PIO4
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:08:45:c8:80/00:00:61:00:00/e0 tag 0 dma 4096 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/100
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:18:e5:04:81/00:00:61:00:00/e0 tag 0 dma 12288 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/100
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:08:55:2f:81/00:00:61:00:00/e0 tag 0 dma 4096 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/100
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:08:05:a7:81/00:00:61:00:00/e0 tag 0 dma 4096 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/100
+ata1.00: limiting speed to UDMA/33:PIO4
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:a0:65:ab:81/00:00:61:00:00/e0 tag 0 dma 81920 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:90:ad:d9:81/00:00:61:00:00/e0 tag 0 dma 73728 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:20:dd:ed:81/00:00:61:00:00/e0 tag 0 dma 16384 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:18:25:19:82/00:00:61:00:00/e0 tag 0 dma 12288 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:18:0d:76:82/00:01:61:00:00/e0 tag 0 dma 143360 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:28:dd:35:83/00:00:61:00:00/e0 tag 0 dma 20480 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:28:ad:4d:83/00:00:61:00:00/e0 tag 0 dma 20480 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:bd:58:83/00:01:61:00:00/e0 tag 0 dma 131072 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:48:dd:83:83/00:00:61:00:00/e0 tag 0 dma 36864 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA
+ata1.00: cmd c8/00:20:05:f2:17/00:00:00:00:00/e0 tag 0 dma 16384 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:10:8d:95:83/00:00:61:00:00/e0 tag 0 dma 8192 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:20:5d:cb:83/00:00:61:00:00/e0 tag 0 dma 16384 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:ed:57:91/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:ed:50:94/00:04:d3:00:00/e0 tag 0 dma 524288 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:7d:d3:a3/00:04:d3:00:00/e0 tag 0 dma 524288 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:fd:e7:a4/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:85:23:aa/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:bd:fa:ad/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:ad:cb:b0/00:04:d3:00:00/e0 tag 0 dma 524288 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:b5:f5:b0/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:c5:33:b1/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:d5:6d:b1/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:dd:8b:b1/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:ed:cf:b1/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:f5:ff:b1/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:f5:01:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:fd:0d:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:fd:0d:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:05:42:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:0d:66:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:1d:90:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:25:ae:b2/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:3d:14:b3/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:3d:20:b3/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:55:a8:b9/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+ata1.00: exception Emask 0x0 SAct 0x0 SErr 0x0 action 0x6
+ata1.00: BMDMA stat 0x26
+ata1.00: failed command: READ DMA EXT
+ata1.00: cmd 25/00:00:6d:fc:b9/00:02:d3:00:00/e0 tag 0 dma 262144 in
+ata1.00: status: { DRDY ERR }
+ata1.00: error: { ICRC ABRT }
+ata1.00: configured for UDMA/33
+
+smartctl 5.39.1 2010-01-28 r3054 [i486-slackware-linux-gnu] (local build)
+Copyright (C) 2002-10 by Bruce Allen, http://smartmontools.sourceforge.net
+
+=== START OF INFORMATION SECTION ===
+Model Family:     Hitachi Deskstar 7K2000
+Device Model:     Hitachi HDS722020ALA330
+Serial Number:    JK1130YAHDHPAT
+Firmware Version: JKAOA28A
+User Capacity:    2,000,398,934,016 bytes
+Device is:        In smartctl database [for details use: -P show]
+ATA Version is:   8
+ATA Standard is:  ATA-8-ACS revision 4
+Local Time is:    Tue Aug 17 14:11:45 2010 EDT
+SMART support is: Available - device has SMART capability.
+SMART support is: Enabled
+
+=== START OF READ SMART DATA SECTION ===
+SMART overall-health self-assessment test result: PASSED
+
+General SMART Values:
+Offline data collection status:  (0x84)	Offline data collection activity
+					was suspended by an interrupting command from host.
+					Auto Offline Data Collection: Enabled.
+Self-test execution status:      (   0)	The previous self-test routine completed
+					without error or no self-test has ever 
+					been run.
+Total time to complete Offline 
+data collection: 		 (22624) seconds.
+Offline data collection
+capabilities: 			 (0x5b) SMART execute Offline immediate.
+					Auto Offline data collection on/off support.
+					Suspend Offline collection upon new
+					command.
+					Offline surface scan supported.
+					Self-test supported.
+					No Conveyance Self-test supported.
+					Selective Self-test supported.
+SMART capabilities:            (0x0003)	Saves SMART data before entering
+					power-saving mode.
+					Supports SMART auto save timer.
+Error logging capability:        (0x01)	Error logging supported.
+					General Purpose Logging supported.
+Short self-test routine 
+recommended polling time: 	 (   1) minutes.
+Extended self-test routine
+recommended polling time: 	 ( 255) minutes.
+SCT capabilities: 	       (0x003d)	SCT Status supported.
+					SCT Feature Control supported.
+					SCT Data Table supported.
+
+SMART Attributes Data Structure revision number: 16
+Vendor Specific SMART Attributes with Thresholds:
+ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_FAILED RAW_VALUE
+  1 Raw_Read_Error_Rate     0x000b   100   100   016    Pre-fail  Always       -       0
+  2 Throughput_Performance  0x0005   131   131   054    Pre-fail  Offline      -       107
+  3 Spin_Up_Time            0x0007   113   113   024    Pre-fail  Always       -       635 (Average 638)
+  4 Start_Stop_Count        0x0012   100   100   000    Old_age   Always       -       51
+  5 Reallocated_Sector_Ct   0x0033   100   100   005    Pre-fail  Always       -       0
+  7 Seek_Error_Rate         0x000b   100   100   067    Pre-fail  Always       -       0
+  8 Seek_Time_Performance   0x0005   110   110   020    Pre-fail  Offline      -       40
+  9 Power_On_Hours          0x0012   100   100   000    Old_age   Always       -       3263
+ 10 Spin_Retry_Count        0x0013   100   100   060    Pre-fail  Always       -       0
+ 12 Power_Cycle_Count       0x0032   100   100   000    Old_age   Always       -       51
+192 Power-Off_Retract_Count 0x0032   100   100   000    Old_age   Always       -       73
+193 Load_Cycle_Count        0x0012   100   100   000    Old_age   Always       -       73
+194 Temperature_Celsius     0x0002   117   117   000    Old_age   Always       -       51 (Lifetime Min/Max 20/57)
+196 Reallocated_Event_Count 0x0032   100   100   000    Old_age   Always       -       0
+197 Current_Pending_Sector  0x0022   100   100   000    Old_age   Always       -       0
+198 Offline_Uncorrectable   0x0008   100   100   000    Old_age   Offline      -       0
+199 UDMA_CRC_Error_Count    0x000a   200   200   000    Old_age   Always       -       56
+
+SMART Error Log Version: 1
+ATA Error Count: 56 (device log contains only the most recent five errors)
+	CR = Command Register [HEX]
+	FR = Features Register [HEX]
+	SC = Sector Count Register [HEX]
+	SN = Sector Number Register [HEX]
+	CL = Cylinder Low Register [HEX]
+	CH = Cylinder High Register [HEX]
+	DH = Device/Head Register [HEX]
+	DC = Device Command Register [HEX]
+	ER = Error register [HEX]
+	ST = Status register [HEX]
+Powered_Up_Time is measured from power on, and printed as
+DDd+hh:mm:SS.sss where DD=days, hh=hours, mm=minutes,
+SS=sec, and sss=millisec. It "wraps" after 49.710 days.
+
+Error 56 occurred at disk power-on lifetime: 3263 hours (135 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 08 ad ce 84 00  Error: ICRC, ABRT 8 sectors at LBA = 0x0084cead = 8703661
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 28 8d ce 84 e1 0a  34d+11:29:51.027  READ DMA EXT
+  25 00 18 6d ce 84 e1 0a  34d+11:29:51.026  READ DMA EXT
+  25 00 10 5d d2 84 e1 0a  34d+11:29:50.998  READ DMA EXT
+  25 00 08 25 d2 84 e1 0a  34d+11:29:50.544  READ DMA EXT
+  25 00 08 e5 d1 84 e1 0a  34d+11:29:49.972  READ DMA EXT
+
+Error 55 occurred at disk power-on lifetime: 3263 hours (135 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 10 35 46 84 00  Error: ICRC, ABRT 16 sectors at LBA = 0x00844635 = 8668725
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 20 25 46 84 e1 0a  34d+11:21:45.583  READ DMA EXT
+  25 00 08 0d 46 84 e1 0a  34d+11:21:44.545  READ DMA EXT
+  25 00 28 cd 45 84 e1 0a  34d+11:21:42.763  READ DMA EXT
+  25 00 20 a5 45 84 e1 0a  34d+11:21:42.762  READ DMA EXT
+  25 00 20 7d 45 84 e1 0a  34d+11:21:42.761  READ DMA EXT
+
+Error 54 occurred at disk power-on lifetime: 3263 hours (135 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 90 dd fd b9 00  Error: ICRC, ABRT 144 sectors at LBA = 0x00b9fddd = 12189149
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 6d fc b9 e3 0a  34d+11:19:06.645  READ DMA EXT
+  25 00 00 6d fa b9 e3 0a  34d+11:19:06.626  READ DMA EXT
+  25 00 00 6d f8 b9 e3 0a  34d+11:19:06.600  READ DMA EXT
+  25 00 00 6d f6 b9 e3 0a  34d+11:19:06.581  READ DMA EXT
+  25 00 00 6d f4 b9 e3 0a  34d+11:19:06.562  READ DMA EXT
+
+Error 53 occurred at disk power-on lifetime: 3263 hours (135 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 e0 75 a8 b9 00  Error: ICRC, ABRT 224 sectors at LBA = 0x00b9a875 = 12167285
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 55 a8 b9 e3 0a  34d+11:19:03.747  READ DMA EXT
+  25 00 00 55 a6 b9 e3 0a  34d+11:19:03.727  READ DMA EXT
+  25 00 00 55 a4 b9 e3 0a  34d+11:19:03.708  READ DMA EXT
+  25 00 00 55 a2 b9 e3 0a  34d+11:19:03.690  READ DMA EXT
+  25 00 00 55 9e b9 e3 0a  34d+11:19:03.531  READ DMA EXT
+
+Error 52 occurred at disk power-on lifetime: 3263 hours (135 days + 23 hours)
+  When the command that caused the error occurred, the device was active or idle.
+
+  After command completion occurred, registers were:
+  ER ST SC SN CL CH DH
+  -- -- -- -- -- -- --
+  84 51 00 3d 22 b3 00  Error: ICRC, ABRT at LBA = 0x00b3223d = 11739709
+
+  Commands leading to the command that caused the error were:
+  CR FR SC SN CL CH DH DC   Powered_Up_Time  Command/Feature_Name
+  -- -- -- -- -- -- -- --  ----------------  --------------------
+  25 00 00 3d 20 b3 e3 0a  34d+11:18:39.709  READ DMA EXT
+  25 00 00 3d 1e b3 e3 0a  34d+11:18:39.689  READ DMA EXT
+  25 00 00 3d 1c b3 e3 0a  34d+11:18:39.670  READ DMA EXT
+  25 00 00 3d 18 b3 e3 0a  34d+11:18:39.521  READ DMA EXT
+  25 00 10 cd fd 83 e1 0a  34d+11:18:39.473  READ DMA EXT
+
+SMART Self-test log structure revision number 1
+Num  Test_Description    Status                  Remaining  LifeTime(hours)  LBA_of_first_error
+# 1  Extended offline    Completed without error       00%      2770         -
+# 2  Extended offline    Interrupted (host reset)      30%      2730         -
+# 3  Short offline       Completed without error       00%      2726         -
+
+SMART Selective self-test log data structure revision number 1
+ SPAN  MIN_LBA  MAX_LBA  CURRENT_TEST_STATUS
+    1        0        0  Not_testing
+    2        0        0  Not_testing
+    3        0        0  Not_testing
+    4        0        0  Not_testing
+    5        0        0  Not_testing
+Selective self-test flags (0x0):
+  After scanning selected spans, do NOT read-scan remainder of disk.
+If Selective self-test is pending on power-up, resume after 0 minute delay.
+

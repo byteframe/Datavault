@@ -1,0 +1,45 @@
+sda1        Boot        Primary   NTFS             [^A]            15512.88 
+sda2                    Primary   Linux swap                        1019.94
+sda3                    Primary   Linux ext3                       57001.20
+sda5                    Logical   Linux ReiserFS   [Datavault]    411058.37
+                        Logical   Free Space                       15512.88
+
+
+reiserfsck 3.6.19 (2003 www.namesys.com)
+
+*************************************************************
+** If you are using the latest reiserfsprogs and  it fails **
+** please  email bug reports to reiserfs-list@namesys.com, **
+** providing  as  much  information  as  possible --  your **
+** hardware,  kernel,  patches,  settings,  all reiserfsck **
+** messages  (including version),  the reiserfsck logfile, **
+** check  the  syslog file  for  any  related information. **
+** If you would like advice on using this program, support **
+** is available  for $25 at  www.namesys.com/support.html. **
+*************************************************************
+
+Will read-only check consistency of the filesystem on /dev/sda5
+Will put log info to 'stdout'
+
+Do you want to run this program?[N/Yes] (note need to type Yes if you do):Yes
+###########
+reiserfsck --check started at Fri Apr 10 14:03:33 2009
+###########
+Replaying journal..
+Reiserfs journal '/dev/sda5' in blocks [18..8211]: 0 transactions replayed
+Checking internal tree..finished                               
+Comparing bitmaps..finished
+Checking Semantic tree:
+finished                                                                       
+No corruptions found
+There are on the filesystem:
+	Leaves 103324
+	Internal nodes 675
+	Directories 2913
+	Other files 40067
+	Data block pointers 99360287 (1 of them are zero)
+	Safe links 0
+###########
+reiserfsck finished at Fri Apr 10 14:13:15 2009
+###########
+
