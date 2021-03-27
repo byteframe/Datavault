@@ -29,28 +29,19 @@
 # MAY 22 2018 "no more smart, just one dest, ignore _new, m3u random, gid/uid"
 # APR 19 2019 "scandisk check, include new videos"
 # SEP 22 2019 "lost+found permissions, !randum, fix perm check, !___new"
-# woo lots of new changes image and software and that, two develoepr youtubes were acrross the line and coffee vendor
-# todo detail full arrangement here
-# screw AAA_MISC!?
-# and the destination lists? are they pointless? I quess, if Im backing up WORK ok 4tb and 2tb are both gonna be synced
-# on audio image work (cept for this file
-#-------------------------------------------------------------------------------
-DRIVE="Datavault_4TB_1"
-DRYRUN=n
-rsync --delete --size-only -lruv${DRYRUN} /mnt/Datavault/Audio/ /run/media/byteframe/${DRIVE}/Audio/
-rsync --delete --size-only -lruv${DRYRUN} /mnt/Datavault/Image/ /run/media/byteframe/${DRIVE}/Image/
-rsync --delete --size-only -lruv${DRYRUN} /mnt/Datavault/Software/ /run/media/byteframe/${DRIVE}/Software/
-rsync --delete --size-only -lruv${DRYRUN} /mnt/Datavault/Work/ /run/media/byteframe/${DRIVE}/Work/
-rsync --delete --size-only -lruv${DRYRUN} /mnt/Datavault/Video/ /run/media/byteframe/${DRIVE}/Video/
+# AUG 26 2020 "image/software, no aaa_misc"
+# NOV 10 2020 "fix-swap source/destination 4tb, name checks find image, change ext4 for ntfs"
 #----SOURCE---------------------------------------------------------------------
-# [_13g] Work
+# [_11g] Image
+# [265g] Software
+# [2.4g] Work
 # [_72g] Audio
-# [636g] Video/Documentary
-# [569g] Video/Movie
-# [1.6t] Video/Television
-# [591g] ST4000LM016GM2X {EXT4} Datavault
+# [647g] Video/Documentary
+# [574g] Video/Movie
+# [1.7t] Video/Television
+# [481g] ST4000LM0161L5C {NTFS} Datavault
 #----DESTINATION----------------------------------------------------------------
-# [763g] ST4000LM0161L5C {NTFS} Datavault
+# [239g] ST4000LM016GM2X {NTFS} Datavault
 #----SORTING--------------------------------------------------------------------
 # make directory for explicit sets and groupings of related SRC, if preferred
 # segments: append number at the end, using digits and "Part x" when called for
@@ -63,7 +54,7 @@ rsync --delete --size-only -lruv${DRYRUN} /mnt/Datavault/Video/ /run/media/bytef
 # easytag: disable(preserve modtime, convert underscore)
 #-------------------------------------------------------------------------------
 
-FILES="Audio Video Work"
+FILES="Audio Image Video Software Work"
 
 function generate_list()
 {
@@ -95,7 +86,7 @@ function sync_destination()
   if [ -z ${N} ]; then
     echo -e "\ngenerating list..."
     rm -f "${DST}"/datavault-*
-#############################################generate_list > "${DST}"/datavault-$(date +%Y.%m.%d)
+    generate_list > "${DST}"/datavault-$(date +%Y.%m.%d)
   fi
   echo "[destination remaining]" ; df -h /dev/${DDEV}
 }
@@ -173,7 +164,7 @@ if [ $(hostname) = Datavault ]; then
     fi
   fi
   echo "[source remaining]" ; df -h /mnt/Datavault
-  echo "[source content]" ; du --apparent-size -s -h Work Audio \
+  echo "[source content]" ; du --apparent-size -s -h Image Software Work Audio \
     Video/Documentary Video/Movie Video/Television
   echo -e "\ngenerating list..." ; \
     generate_list > Work/Datavault/List/datavault-$(date +%Y.%m.%d)
@@ -185,7 +176,6 @@ if [ $(hostname) = Datavault ]; then
     DDEV=sdd1
     determine_ntfs ${DDEV} ; echo ${FSCK}
     umount /dev/${DDEV} ; ${FSCK} /dev/${DDEV} && mount /dev/${DDEV} ${DMNT}
-#################################################mkdir -p ${DMNT}/AAA_MISC ; chown -R byteframe:users ${DMNT}/AAA_MISC
     sync_destination ${DMNT}
     umount /dev/${DDEV}
 
