@@ -31,6 +31,8 @@
 # SEP 22 2019 "lost+found permissions, !randum, fix perm check, !___new"
 # AUG 26 2020 "image/software, no aaa_misc"
 # NOV 10 2020 "fix-swap source/destination 4tb, name checks find image, change ext4 for ntfs"
+# XXX XX 2021 "how to github lfs on cygwin?, Audio Speech make a decision"
+# XXX XX 2022 "/mnt/d/Work/Game/steamtours/byteframe10-Enchanter's_Edifice/content/materials/desktop.ini"
 #----SOURCE---------------------------------------------------------------------
 # [_11g] Image
 # [265g] Software
