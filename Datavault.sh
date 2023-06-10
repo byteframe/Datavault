@@ -31,19 +31,21 @@
 # SEP 22 2019 "lost+found permissions, !randum, fix perm check, !___new"
 # AUG 26 2020 "image/software, no aaa_misc"
 # NOV 10 2020 "fix-swap source/destination 4tb, name checks find image, change ext4 for ntfs"
-# XXX XX 2021 "how to github lfs on cygwin?, Audio Speech make a decision"
-# XXX XX 2022 "/mnt/d/Work/Game/steamtours/byteframe10-Enchanter's_Edifice/content/materials/desktop.ini"
+# JAN 14 2022 "account for here, github lfs crisis (barely saved), explicate source find"
+# NOV 20 2022 "audio album artist removal, misc prune"
+# JUN 09 2023 "documentary handbrake, tv+movie culls, youtube and quickbu on 5/11
+# XXX 09 2023 "XXX did I remove AlbumArtist? then deal with more filesystem concerns on audio for the phone"
 #----SOURCE---------------------------------------------------------------------
-# [_11g] Image
-# [265g] Software
-# [2.4g] Work
-# [_72g] Audio
-# [647g] Video/Documentary
-# [574g] Video/Movie
-# [1.7t] Video/Television
-# [481g] ST4000LM0161L5C {NTFS} Datavault
+# [_18g] Image
+# [6.3g] Work
+# [_74g] Audio
+# [158g] Video/Documentary
+# [544g] Video/Movie
+# [1.8t] Video/Television
+# [444g] Video/Youtube
+# [162g] ST4000LM0161L5C {NTFS} Datavault
 #----DESTINATION----------------------------------------------------------------
-# [239g] ST4000LM016GM2X {NTFS} Datavault
+# [162g] ST4000LM016GM2X {NTFS} DatavaultBackup
 #----SORTING--------------------------------------------------------------------
 # make directory for explicit sets and groupings of related SRC, if preferred
 # segments: append number at the end, using digits and "Part x" when called for
@@ -56,7 +58,7 @@
 # easytag: disable(preserve modtime, convert underscore)
 #-------------------------------------------------------------------------------
 
-FILES="Audio Image Video Software Work"
+FILES="Audio Image Video Work"
 
 function generate_list()
 {
@@ -71,18 +73,16 @@ function sync_destination()
   fi
   DST=${1}
   mkdir -p "${DST}"/Video
-  for DIR in $(ls --hide=lost+found --hide=Video "${DST}"); do
+  for DIR in ${FILES/Video/}; do
     if [ -d "${DIR}" ]; then
       echo "${DST}"/"${DIR}:"
-      rsync --delete --size-only -l${PERMS}truv${N} \
-        "${DIR}"/ "${DST}"/"${DIR}" ; echo
+      rsync --delete --size-only -l${PERMS}truv${N} "${DIR}"/ "${DST}"/"${DIR}" ; echo
     fi
   done
   for DIR in $(ls "${DST}"/Video); do
     if [ -d Video/"${DIR}" ]; then
       echo "${DST}"/Video/"${DIR}:"
-      rsync --delete --size-only -${PERMS}truv${N} \
-        Video/"${DIR}"/ "${DST}"/Video/"${DIR}" ; echo
+      rsync --delete --size-only -${PERMS}truv${N} Video/"${DIR}"/ "${DST}"/Video/"${DIR}" ; echo
     fi
   done
   if [ -z ${N} ]; then
@@ -134,7 +134,7 @@ if [ -z ${1} ]; then
     find Video/Movie -type f -exec basename {} \; \
       | sed 's/\(.*\)\..*/\1/' | sort | tr '[:lower:]' '[:upper:]' \
       | uniq -c | grep -v "^[ \t]*1 "
-    FOUND=$(find ${FILES} -not -path "Work/*" -not -path "*___NEW/*" \( -name ".*" \
+    FOUND=$(find ${FILES} -not -path "Work/*" -not -path "Image/*" -not -path "*___NEW/*" \( -name ".*" \
       -o -iregex ".*\s\(isnt\|lets\|dont\|wont\)\s.*" -o -regex ".*\s\s.*" \
       -o -regex ".*\s\(are\|be\|by\|my\|isn't\|it\|than\|then\|there\|that\|this\|was\|without\)\s.*" \
       -o -regex ".*[^,-]\s\(A\|An\|And\|As\|At\|For\|From\|If\|Is\|In\|Into\|Of\|On\|Or\|The\|To\|With\)\s[^(].*" \
@@ -166,8 +166,7 @@ if [ $(hostname) = Datavault ]; then
     fi
   fi
   echo "[source remaining]" ; df -h /mnt/Datavault
-  echo "[source content]" ; du --apparent-size -s -h Image Software Work Audio \
-    Video/Documentary Video/Movie Video/Television
+  echo "[source content]" ; du --apparent-size -s -h Image Work Audio Video/Documentary Video/Movie Video/Television Video/Youtube
   echo -e "\ngenerating list..." ; \
     generate_list > Work/Datavault/List/datavault-$(date +%Y.%m.%d)
   chown -R byteframe:users Work/Datavault
