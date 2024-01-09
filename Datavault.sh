@@ -33,19 +33,21 @@
 # NOV 10 2020 "fix-swap source/destination 4tb, name checks find image, change ext4 for ntfs"
 # JAN 14 2022 "account for here, github lfs crisis (barely saved), explicate source find"
 # NOV 20 2022 "audio album artist removal, misc prune"
-# JUN 09 2023 "documentary handbrake, tv+movie culls, youtube and quickbu on 5/11
-# XXX 09 2023 "XXX did I remove AlbumArtist? then deal with more filesystem concerns on audio for the phone"
+# JUN 09 2023 "documentary handbrake, tv+movie culls, youtube and quickbu on 5/11"
+# JAN 04 2024 "main file src variable, include source assets in calculations, list generation off by default, audio file length and playlist fixes"
+# XXX XX 2024 ""
 #----SOURCE---------------------------------------------------------------------
-# [_18g] Image
-# [6.3g] Work
+# [_22g] Image
+# [_13g] Work
 # [_74g] Audio
 # [158g] Video/Documentary
-# [544g] Video/Movie
+# [545g] Video/Movie
 # [1.8t] Video/Television
-# [444g] Video/Youtube
-# [162g] ST4000LM0161L5C {NTFS} Datavault
+# [453g] Video/Youtube
+# [605g] Source
+# [101g] ST4000LM0161L5C {NTFS} Datavault
 #----DESTINATION----------------------------------------------------------------
-# [162g] ST4000LM016GM2X {NTFS} DatavaultBackup
+# [101] ST4000LM016GM2X {NTFS} DatavaultBackup
 #----SORTING--------------------------------------------------------------------
 # make directory for explicit sets and groupings of related SRC, if preferred
 # segments: append number at the end, using digits and "Part x" when called for
@@ -58,11 +60,14 @@
 # easytag: disable(preserve modtime, convert underscore)
 #-------------------------------------------------------------------------------
 
-FILES="Audio Image Video Work"
+FILES="Audio Image Source Video Work"
+SRC=/mnt/d
 
 function generate_list()
 {
-  find ${FILES} -type f -exec du -b {} \; | sort -k 2
+  if [ ! -z ${GENERATE_LISTS} ]; then
+    find ${FILES} -type f -exec du -b {} \; | sort -k 2
+  fi
 }
 
 function sync_destination()
@@ -94,7 +99,7 @@ function sync_destination()
 }
 
 DATE=$(date +%s)
-cd /mnt/Datavault
+cd ${SRC}
 
 # adjust fs check call for ntfs filesystems
 function determine_ntfs()
@@ -134,8 +139,8 @@ if [ -z ${1} ]; then
     find Video/Movie -type f -exec basename {} \; \
       | sed 's/\(.*\)\..*/\1/' | sort | tr '[:lower:]' '[:upper:]' \
       | uniq -c | grep -v "^[ \t]*1 "
-    FOUND=$(find ${FILES} -not -path "Work/*" -not -path "Image/*" -not -path "*___NEW/*" \( -name ".*" \
-      -o -iregex ".*\s\(isnt\|lets\|dont\|wont\)\s.*" -o -regex ".*\s\s.*" \
+    FOUND=$(find ${FILES} -not -path "Video/Youtube/*" -not -path "Work/*" -not -path "Source/*" -not -path "Image/*" -not -path "*___NEW/*" \( -name ".*" \
+      -o -iregex ".*\s\(isnt\|dont\|wont\)\s.*" -o -regex ".*\s\s.*" \
       -o -regex ".*\s\(are\|be\|by\|my\|isn't\|it\|than\|then\|there\|that\|this\|was\|without\)\s.*" \
       -o -regex ".*[^,-]\s\(A\|An\|And\|As\|At\|For\|From\|If\|Is\|In\|Into\|Of\|On\|Or\|The\|To\|With\)\s[^(].*" \
       -o -regex ".*[~:;&?*<>].*" -o -iregex ".*\s\(v\.?\|vs\|versus\.?\)\s.*" \) | sort)
@@ -158,15 +163,15 @@ kill -STOP $(pgrep -fx xfce4-power-manager)
 # check source hard drive
 if [ $(hostname) = Datavault ]; then
   if [ ! -z ${SCANDISK} ]; then
-    cd && umount /mnt/Datavault ; ${FSCK} /dev/${SDEV} \
-      && mount /mnt/Datavault && cd /mnt/Datavault
+    cd && umount ${SRC} ; ${FSCK} /dev/${SDEV} \
+      && mount ${SRC} && cd ${SRC}
     if [ ! -z ${SMART} ]; then
       smartctl -t short -d sat /dev/${SDEV:0:3} && echo -e "\n[sleep 150]" && sleep 150
       smartctl -a /dev/${SDEV:0:3} -d sat > Work/Datavault/SMART/SMART-$(date +%Y.%m.%d)
     fi
   fi
-  echo "[source remaining]" ; df -h /mnt/Datavault
-  echo "[source content]" ; du --apparent-size -s -h Image Work Audio Video/Documentary Video/Movie Video/Television Video/Youtube
+  echo "[source remaining]" ; df -h ${SRC}
+  echo "[source content]" ; du --apparent-size -s -h Image Work Audio Video/Documentary Video/Movie Video/Television Video/Youtube Source
   echo -e "\ngenerating list..." ; \
     generate_list > Work/Datavault/List/datavault-$(date +%Y.%m.%d)
   chown -R byteframe:users Work/Datavault
