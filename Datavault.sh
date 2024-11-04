@@ -35,17 +35,17 @@
 # NOV 20 2022 "audio album artist removal, misc prune"
 # JUN 09 2023 "documentary handbrake, tv+movie culls, youtube and quickbu on 5/11"
 # JAN 04 2024 "main file src variable, include source assets in calculations, list generation off by default, audio file length and playlist fixes"
-# XXX XX 2024 ""
+# NOV 05 2024 "removed from generate_list: -exec du -b {} \; | sort -k 2, saving list for mafiles"
 #----SOURCE---------------------------------------------------------------------
 # [_22g] Image
-# [_13g] Work
-# [_74g] Audio
+# [_27g] Work
+# [_77g] Audio
 # [158g] Video/Documentary
 # [545g] Video/Movie
 # [1.8t] Video/Television
-# [453g] Video/Youtube
-# [605g] Source
-# [101g] ST4000LM0161L5C {NTFS} Datavault
+# [452g] Video/Youtube
+# [362g] Source
+# [329g] ST4000LM0161L5C {NTFS} Datavault
 #----DESTINATION----------------------------------------------------------------
 # [101] ST4000LM016GM2X {NTFS} DatavaultBackup
 #----SORTING--------------------------------------------------------------------
@@ -66,7 +66,7 @@ SRC=/mnt/d
 function generate_list()
 {
   if [ ! -z ${GENERATE_LISTS} ]; then
-    find ${FILES} -type f -exec du -b {} \; | sort -k 2
+    find ${FILES} -type f
   fi
 }
 
