@@ -36,18 +36,18 @@
 # JUN 09 2023 "documentary handbrake, tv+movie culls, youtube and quickbu on 5/11"
 # JAN 04 2024 "main file src variable, include source assets in calculations, list generation off by default, audio file length and playlist fixes"
 # NOV 05 2024 "removed from generate_list: -exec du -b {} \; | sort -k 2, saving list for mafiles"
+# MAY 16 2025 "documentary squeeze, fixed destination remaining check, skipped typo check"
 #----SOURCE---------------------------------------------------------------------
-# [_22g] Image
-# [_27g] Work
+# [_24g] Image
+# [_36g] Work
 # [_77g] Audio
-# [158g] Video/Documentary
-# [545g] Video/Movie
+# [566g] Video/Movie
 # [1.8t] Video/Television
-# [452g] Video/Youtube
-# [362g] Source
-# [329g] ST4000LM0161L5C {NTFS} Datavault
+# [467g] Video/Youtube
+# [429g] Source
+# [281g] ST4000LM0161L5C {NTFS} Datavault
 #----DESTINATION----------------------------------------------------------------
-# [101] ST4000LM016GM2X {NTFS} DatavaultBackup
+# [206g] ST4000LM016GM2X {NTFS} DatavaultBackup
 #----SORTING--------------------------------------------------------------------
 # make directory for explicit sets and groupings of related SRC, if preferred
 # segments: append number at the end, using digits and "Part x" when called for
@@ -60,7 +60,7 @@
 # easytag: disable(preserve modtime, convert underscore)
 #-------------------------------------------------------------------------------
 
-FILES="Audio Image Source Video Work"
+FILES="Audio Image Video Work"
 SRC=/mnt/d
 
 function generate_list()
@@ -95,7 +95,7 @@ function sync_destination()
     rm -f "${DST}"/datavault-*
     generate_list > "${DST}"/datavault-$(date +%Y.%m.%d)
   fi
-  echo "[destination remaining]" ; df -h /dev/${DDEV}
+  echo "[destination remaining]" ; df -h /mnt/t
 }
 
 DATE=$(date +%s)
@@ -171,7 +171,7 @@ if [ $(hostname) = Datavault ]; then
     fi
   fi
   echo "[source remaining]" ; df -h ${SRC}
-  echo "[source content]" ; du --apparent-size -s -h Image Work Audio Video/Documentary Video/Movie Video/Television Video/Youtube Source
+  echo "[source content]" ; du --apparent-size -s -h Image Work Audio Video/Movie Video/Television Video/Youtube Source
   echo -e "\ngenerating list..." ; \
     generate_list > Work/Datavault/List/datavault-$(date +%Y.%m.%d)
   chown -R byteframe:users Work/Datavault
